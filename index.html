@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Snehal Shirgure | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-gray-50 text-gray-900">
+    <!-- Navbar -->
+    <nav class="flex justify-between items-center p-6 bg-white shadow-md sticky top-0 z-10">
+      <h1 class="text-2xl font-bold">Snehal Shirgure<span class="text-blue-600"></span></h1>
+      <div class="space-x-6">
+        <a href="#about" class="hover:text-blue-600">About</a>
+        <a href="#projects" class="hover:text-blue-600">Projects</a>
+        <a href="#skills" class="hover:text-blue-600">Skills</a>
+        <a href="#contact" class="hover:text-blue-600">Contact</a>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="text-center py-24 bg-gradient-to-b from-white to-gray-100">
+      <h2 class="text-5xl font-bold mb-4">Hi, I’m <span class="text-blue-600">Snehal!</span></h2>
+      <p class="text-xl mb-6">A Passionate <strong>Machine Learning Engineer</strong> & Builder</p>
+      <a href="#projects"
+        class="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition">View My Work</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="max-w-5xl mx-auto px-6 py-20">
+      <h3 class="text-3xl font-bold mb-6 text-center">About Me</h3>
+      <div class="md:flex items-center gap-10">
+        <img src="./myimage.JPG" style="width: 250px;" alt="Profile" class="rounded-full mx-auto mb-6 md:mb-0" />
+        <p class="text-lg text-gray-700 leading-relaxed">
+          I’m a data-driven engineer passionate about creating impactful, intelligent solutions.
+          My experience spans machine learning, data pipelines, and production AI systems.
+          I specialize in solving complex problems and translating ideas into scalable systems.
+        </p>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="bg-gray-100 py-20">
+      <div class="max-w-5xl mx-auto px-6">
+        <h3 class="text-3xl font-bold mb-10 text-center">Projects</h3>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Project Card -->
+          <div class="bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition">
+            <h4 class="text-xl font-semibold mb-2">Project One</h4>
+            <p class="text-gray-600 mb-4">Brief description of your project and what it does.</p>
+            <a href="#" class="text-blue-600 font-medium hover:underline">View Details →</a>
+          </div>
+
+          <div class="bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition">
+            <h4 class="text-xl font-semibold mb-2">Project Two</h4>
+            <p class="text-gray-600 mb-4">A web app built with React and Flask backend.</p>
+            <a href="#" class="text-blue-600 font-medium hover:underline">View Details →</a>
+          </div>
+
+          <div class="bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition">
+            <h4 class="text-xl font-semibold mb-2">Project Three</h4>
+            <p class="text-gray-600 mb-4">An ML model that predicts user churn with high accuracy.</p>
+            <a href="#" class="text-blue-600 font-medium hover:underline">View Details →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="max-w-5xl mx-auto px-6 py-20">
+      <h3 class="text-3xl font-bold mb-10 text-center">Skills</h3>
+      <div class="flex flex-wrap justify-center gap-4">
+        <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full">Python</span>
+        <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full">PyTorch</span>
+        <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full">React</span>
+        <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full">AWS</span>
+        <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full">Docker</span>
+        <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full">Kubernetes</span>
+        <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full">SQL</span>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-blue-600 text-white py-20 text-center">
+      <h3 class="text-3xl font-bold mb-4">Let’s Connect</h3>
+      <p class="mb-8">I’m open to collaborations, projects, and conversations!</p>
+      <a href="mailto:snehalshirgure@gmail.com"
+        class="bg-white text-blue-600 px-6 py-3 rounded-full font-medium hover:bg-gray-200 transition">Email Me</a>
+      <div class="mt-8 space-x-6">
+        <a target="_blank" href="https://www.linkedin.com/in/snehalshirgure/" class="hover:underline">LinkedIn</a>
+        <a target="_blank" href="https://github.com/snehalshirgure" class="hover:underline">GitHub</a>
+        <a target="_blank" href="https://www.instagram.com/snehalshirgure/?hl=en" class="hover:underline">Instagram</a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-6 text-center text-gray-500 text-sm bg-white">
+      © <span id="year"></span> Snehal Shirgure. All rights reserved.
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
