@@ -5,6 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Snehal Shirgure | Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // Smooth scrolling behavior
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll("a[href^='#']").forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            document
+              .querySelector(this.getAttribute("href"))
+              .scrollIntoView({ behavior: "smooth" });
+          });
+        });
+      });
+    </script>
   </head>
 
   <body class="bg-gray-50 text-gray-900">
@@ -30,11 +43,11 @@
       </div>
 
       <div class="p-6 border-t border-gray-200 text-sm text-gray-500">
-        © <span id="year"></span> Your Name
+        © <span id="year"></span> Snehal Shirgure
       </div>
     </aside>
 
-     <!-- Mobile Menu Button -->
+    <!-- Mobile Menu Button -->
     <button
       id="menu-btn"
       class="md:hidden fixed top-4 right-4 z-30 bg-red-600 text-white p-2 rounded-md focus:outline-none"
@@ -153,6 +166,17 @@
     </footer>
 
     <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+     <script>
+      // Toggle sidebar on mobile
+      const menuBtn = document.getElementById("menu-btn");
+      const sidebar = document.getElementById("sidebar");
+
+      menuBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("-translate-x-full");
+      });
+
       document.getElementById("year").textContent = new Date().getFullYear();
     </script>
   </body>
