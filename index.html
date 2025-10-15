@@ -66,7 +66,7 @@
 
     <!-- Hero Section -->
     <section style="background-image: url('./assets/gg.png');" class="text-center py-24 bg-gradient-to-b from-white to-gray-100">
-      <h2 class="text-5xl font-bold mb-4">Hi, I’m <span class="text-black-600">Snehal!</span></h2>
+      <h2 class="text-5xl font-bold mb-4">Hi, I’m <span class="text-white">Snehal!</span></h2>
       <p class="text-xl mb-6">    A Passionate <strong>Machine Learning Engineer</strong> & Code Builder</p>
       <a href="#experience"
         class="bg-red-600 text-white px-6 py-3 rounded-full hover:bg-red-700 transition">View My Work</a>
@@ -179,30 +179,16 @@
       const menuBtn = document.getElementById("menu-btn");
       const closeBtn = document.getElementById("close-btn");
       const links = document.querySelectorAll(".nav-link");
-
+      
       // Mobile toggle
       menuBtn.addEventListener("click", () => {
         sidebar.classList.remove("-translate-x-full");
+        menuBtn.style.display = "none";
       });
       closeBtn.addEventListener("click", () => {
         sidebar.classList.add("-translate-x-full");
+        menuBtn.style.display = "block";
       });
-
-      // // Update active link on scroll
-      // const sections = document.querySelectorAll("section[id]");
-      // window.addEventListener("scroll", () => {
-      //   let current = "";
-      //   sections.forEach((section) => {
-      //     const sectionTop = section.offsetTop - 100;
-      //     if (scrollY >= sectionTop) current = section.getAttribute("id");
-      //   });
-      //   links.forEach((link) => {
-      //     link.classList.remove("active-link");
-      //     if (link.getAttribute("href") === `#${current}`) {
-      //       link.classList.add("active-link");
-      //     }
-      //   });
-      // });
 
       document.getElementById("year").textContent = new Date().getFullYear();
     </script>
