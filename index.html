@@ -18,27 +18,36 @@
         });
       });
     </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      /* Highlight active link */
+      .active-link {
+        color: #cc2212; /* Tailwind red-600 */
+        font-weight: 600;
+      }
+    </style>
   </head>
 
   <body class="bg-gray-50 text-gray-900">
     <!-- Sidebar -->
     <aside
-      class="fixed top-0 left-0 h-full w-64 bg-white shadow-lg flex flex-col justify-between z-20 transition-transform duration-300 md:translate-x-0"
       id="sidebar"
+      class="fixed top-0 left-0 h-full w-64 bg-white shadow-lg flex flex-col justify-between z-20 transform -translate-x-full md:translate-x-0 transition-transform duration-300"
     >
       <div>
-        <div class="p-6 border-b border-gray-200">
-          <h1 class="text-2xl font-bold">
-            Snehal Shirgure<span class="text-blue-600">.</span>
-          </h1>
+        <div class="p-6 border-b border-gray-200 flex justify-between items-center">
+          <h1 class="text-2xl font-bold">Snehal Shirgure<span class="text-red-600">.</span></h1>
+          <button id="close-btn" class="md:hidden text-gray-500 text-2xl font-bold">&times;</button>
         </div>
 
-        <nav class="flex flex-col p-6 space-y-4">
-        <a href="#about" class="hover:text-red-600">About</a>
-        <a target="_blank" href="./assets/resume.pdf" class="hover:text-red-600">Resume</a>
-        <a href="#projects" class="hover:text-red-600">Projects</a>
-        <a href="#skills" class="hover:text-red-600">Skills</a>
-        <a href="#contact" class="hover:text-red-600">Contact</a>
+        <nav id="nav-links" class="flex flex-col p-6 space-y-4">
+          <a href="#about" class="hover:text-red-600 nav-link">About</a>
+          <a href="./assets/resume.pdf" target="_blank" class="hover:text-red-600 nav-link">Resume</a>
+          <a href="#projects" class="hover:text-red-600 nav-link">Projects</a>
+          <a href="#skills" class="hover:text-red-600 nav-link">Skills</a>
+          <a href="#contact" class="hover:text-red-600 nav-link">Contact</a>
         </nav>
       </div>
 
@@ -166,18 +175,37 @@
     </footer>
 
     <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
-     <script>
-      // Toggle sidebar on mobile
-      const menuBtn = document.getElementById("menu-btn");
       const sidebar = document.getElementById("sidebar");
+      const menuBtn = document.getElementById("menu-btn");
+      const closeBtn = document.getElementById("close-btn");
+      const links = document.querySelectorAll(".nav-link");
 
+      // Mobile toggle
       menuBtn.addEventListener("click", () => {
-        sidebar.classList.toggle("-translate-x-full");
+        sidebar.classList.remove("-translate-x-full");
+      });
+      closeBtn.addEventListener("click", () => {
+        sidebar.classList.add("-translate-x-full");
       });
 
+      // // Update active link on scroll
+      // const sections = document.querySelectorAll("section[id]");
+      // window.addEventListener("scroll", () => {
+      //   let current = "";
+      //   sections.forEach((section) => {
+      //     const sectionTop = section.offsetTop - 100;
+      //     if (scrollY >= sectionTop) current = section.getAttribute("id");
+      //   });
+      //   links.forEach((link) => {
+      //     link.classList.remove("active-link");
+      //     if (link.getAttribute("href") === `#${current}`) {
+      //       link.classList.add("active-link");
+      //     }
+      //   });
+      // });
+
       document.getElementById("year").textContent = new Date().getFullYear();
     </script>
+    
   </body>
 </html>
